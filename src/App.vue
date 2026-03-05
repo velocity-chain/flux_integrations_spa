@@ -7,7 +7,7 @@
         data-automation-id="nav-drawer-toggle"
         aria-label="Open navigation drawer"
       />
-      <v-app-bar-title>{{service.name | capitalize}}</v-app-bar-title>
+      <v-app-bar-title>Integrations</v-app-bar-title>
     </v-app-bar>
 
     <v-navigation-drawer
@@ -16,49 +16,81 @@
       temporary
     >
       <v-list density="compact" nav>
-        {% for item in service.data_domains.controls %}
-        <v-list-subheader>{{ item | upper }} DOMAIN</v-list-subheader>
+        
+        <v-list-subheader>INTEGRATION DOMAIN</v-list-subheader>
         <v-list-item
-          to="/{{ item | lower }}s"
+          to="/integrations"
           prepend-icon="mdi-view-list"
-          title="List {{ item }}s"
-          data-automation-id="nav-{{ item | lower }}s-list-link"
+          title="List Integrations"
+          data-automation-id="nav-integrations-list-link"
         />
         <v-list-item
-          to="/{{ item | lower }}s/new"
+          to="/integrations/new"
           prepend-icon="mdi-plus"
-          title="New {{ item }}"
-          data-automation-id="nav-{{ item | lower }}s-new-link"
+          title="New Integration"
+          data-automation-id="nav-integrations-new-link"
         />
 
         <v-divider class="my-2" />
-        {% endfor %}
-        {% for item in service.data_domains.creates %}
-        <v-list-subheader>{{ item | upper }} DOMAIN</v-list-subheader>
+        
+        
+        <v-list-subheader>INVENTORY DOMAIN</v-list-subheader>
         <v-list-item
-          to="/{{ item | lower }}s"
+          to="/inventorys"
           prepend-icon="mdi-view-list"
-          title="List {{ item }}s"
-          data-automation-id="nav-{{ item | lower }}s-list-link"
+          title="List Inventorys"
+          data-automation-id="nav-inventorys-list-link"
         />
         <v-list-item
-          to="/{{ item | lower }}s/new"
+          to="/inventorys/new"
           prepend-icon="mdi-plus"
-          title="New {{ item }}"
-          data-automation-id="nav-{{ item | lower }}s-new-link"
+          title="New Inventory"
+          data-automation-id="nav-inventorys-new-link"
         />
 
         <v-divider class="my-2" />
-        {% endfor %}
-        {% for item in service.data_domains.consumes %}
-        <v-list-subheader>{{ item | upper }} DOMAIN</v-list-subheader>
+        
+        <v-list-subheader>SHIPMENT DOMAIN</v-list-subheader>
         <v-list-item
-          to="/{{ item | lower }}s"
+          to="/shipments"
           prepend-icon="mdi-view-list"
-          title="List {{ item }}s"
-          data-automation-id="nav-{{ item | lower }}s-list-link"
+          title="List Shipments"
+          data-automation-id="nav-shipments-list-link"
         />
-        {% endfor %}
+        <v-list-item
+          to="/shipments/new"
+          prepend-icon="mdi-plus"
+          title="New Shipment"
+          data-automation-id="nav-shipments-new-link"
+        />
+
+        <v-divider class="my-2" />
+        
+        
+        <v-list-subheader>ORGANIZATION DOMAIN</v-list-subheader>
+        <v-list-item
+          to="/organizations"
+          prepend-icon="mdi-view-list"
+          title="List Organizations"
+          data-automation-id="nav-organizations-list-link"
+        />
+        
+        <v-list-subheader>SUPPLIER DOMAIN</v-list-subheader>
+        <v-list-item
+          to="/suppliers"
+          prepend-icon="mdi-view-list"
+          title="List Suppliers"
+          data-automation-id="nav-suppliers-list-link"
+        />
+        
+        <v-list-subheader>PRODUCT DOMAIN</v-list-subheader>
+        <v-list-item
+          to="/products"
+          prepend-icon="mdi-view-list"
+          title="List Products"
+          data-automation-id="nav-products-list-link"
+        />
+        
       </v-list>
 
       <template v-slot:append>
